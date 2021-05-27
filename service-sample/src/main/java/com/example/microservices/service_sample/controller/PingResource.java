@@ -1,7 +1,8 @@
-package com.example.microservices.service_sample;
+package com.example.microservices.service_sample.controller;
 
 import com.example.microservices.IdGenerator;
 import com.example.microservices.message_protocol.PingMO;
+import com.example.microservices.service_sample.ServiceSampleApplication;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

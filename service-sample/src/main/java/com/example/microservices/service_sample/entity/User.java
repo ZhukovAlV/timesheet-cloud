@@ -3,6 +3,8 @@ package com.example.microservices.service_sample.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
 @NoArgsConstructor
 @Data
 @Entity
