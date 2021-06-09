@@ -37,18 +37,21 @@ public class UserController {
     // Сохраняем изменения пользователю
     @PutMapping("/save")
     public User saveUser(@ModelAttribute("user")User user) {
+        log.info("Save user");
         return userService.save(user);
     }
 
     // Добавляем нового пользователя
     @PostMapping("/add")
     public User addUser(@ModelAttribute("user")User user) {
+        log.info("Add user");
         return userService.save(user);
     }
 
     // Удаляем пользователя
     @DeleteMapping("/delete/{id}")
     public Map<String, Boolean> deleteUser(@PathVariable Long id) {
+        log.info("Delete user by ID");
         userService.deleteById(id);
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
