@@ -8,13 +8,13 @@ import java.util.Optional;
 import java.util.concurrent.TimeoutException;
 
 public interface UserService {
-    User saveUser(User usersDto) throws ValidationException, TimeoutException;
+    User save(User user);
 
-    void deleteUser(Integer userId);
+    void deleteById(Long userId);
 
     User findByLogin(String login);
 
     List<User> findAll();
 
-    Optional<User> findById(Integer id);
+    Optional<User> findById(Long id);
 }
