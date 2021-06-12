@@ -1,18 +1,14 @@
-package com.example.microservices.service_sample.controller;
+package com.example.microservices.service_timesheet.controller;
 
-import com.example.microservices.service_sample.entity.User;
-import com.example.microservices.service_sample.service.UserService;
+import com.example.microservices.service_timesheet.entity.User;
+import com.example.microservices.service_timesheet.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import javax.xml.bind.ValidationException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
-import java.util.concurrent.TimeoutException;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")

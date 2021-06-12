@@ -1,15 +1,13 @@
-package com.example.microservices.service_sample.service;
+package com.example.microservices.service_timesheet.service;
 
-import com.example.microservices.service_sample.entity.User;
-import com.example.microservices.service_sample.repository.UserRepository;
+import com.example.microservices.service_timesheet.entity.User;
+import com.example.microservices.service_timesheet.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.xml.bind.ValidationException;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.TimeoutException;
 
 @Service
 @AllArgsConstructor

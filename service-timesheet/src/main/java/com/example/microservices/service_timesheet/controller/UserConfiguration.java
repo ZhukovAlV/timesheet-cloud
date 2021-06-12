@@ -1,4 +1,4 @@
-package com.example.microservices.service_sample.controller;
+package com.example.microservices.service_timesheet.controller;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

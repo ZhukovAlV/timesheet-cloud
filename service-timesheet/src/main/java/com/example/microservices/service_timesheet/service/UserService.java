@@ -1,11 +1,9 @@
-package com.example.microservices.service_sample.service;
+package com.example.microservices.service_timesheet.service;
 
-import com.example.microservices.service_sample.entity.User;
+import com.example.microservices.service_timesheet.entity.User;
 
-import javax.xml.bind.ValidationException;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.TimeoutException;
 
 public interface UserService {
     User save(User user);
