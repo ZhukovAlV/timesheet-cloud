@@ -11,9 +11,6 @@
     <modules>
         <module>cloud-eureka</module>
         <module>cloud-zuul</module>
-        <module>cloud-zuul</module>
-        <module>service-sample</module>
-        <module>common</module>
-        <module>message-protocol</module>
+        <module>service-timesheet</module>
     </modules>
 </project>

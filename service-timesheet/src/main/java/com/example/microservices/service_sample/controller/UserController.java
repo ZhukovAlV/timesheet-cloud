@@ -5,6 +5,7 @@ import com.example.microservices.service_sample.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.xml.bind.ValidationException;
 import java.util.HashMap;
@@ -14,6 +15,7 @@ import java.util.Optional;
 import java.util.concurrent.TimeoutException;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/user")
 @AllArgsConstructor
 @Log4j2
