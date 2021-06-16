@@ -5,6 +5,8 @@ import com.example.microservices.service_timedata.repository.TimeDataRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +18,9 @@ public class TimeDataServiceImpl implements TimeDataService {
 
     @Override
     public List<TimeData> findAll() {
-        return (List<TimeData>) timeDataRepository.findAll();
+        List<TimeData> list = new ArrayList<>();
+        timeDataRepository.findAll().forEach(list::add);
+        return list;
     }
 
     @Override
