@@ -1,4 +1,4 @@
-package com.example.microservices.service_timesheet.entity;
+package com.example.microservices.service_timedata.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

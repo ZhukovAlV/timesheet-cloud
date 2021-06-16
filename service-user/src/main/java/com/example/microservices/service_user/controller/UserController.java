@@ -1,7 +1,7 @@
-package com.example.microservices.service_timesheet.controller;
+package com.example.microservices.service_user.controller;
 
-import com.example.microservices.service_timesheet.entity.User;
-import com.example.microservices.service_timesheet.service.UserService;
+import com.example.microservices.service_user.entity.User;
+import com.example.microservices.service_user.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.*;

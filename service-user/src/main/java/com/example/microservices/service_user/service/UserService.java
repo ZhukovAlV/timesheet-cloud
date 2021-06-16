@@ -1,6 +1,6 @@
-package com.example.microservices.service_timesheet.service;
+package com.example.microservices.service_user.service;
 
-import com.example.microservices.service_timesheet.entity.User;
+import com.example.microservices.service_user.entity.User;
 
 import java.util.List;
 import java.util.Optional;

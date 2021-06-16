@@ -1,6 +1,6 @@
-package com.example.microservices.service_timesheet.repository;
+package com.example.microservices.service_timedata.repository;
 
-import com.example.microservices.service_timesheet.entity.TimeData;
+import com.example.microservices.service_timedata.entity.TimeData;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

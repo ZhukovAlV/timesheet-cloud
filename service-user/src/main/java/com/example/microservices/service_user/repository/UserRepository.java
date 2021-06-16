@@ -1,6 +1,6 @@
-package com.example.microservices.service_timesheet.repository;
+package com.example.microservices.service_user.repository;
 
-import com.example.microservices.service_timesheet.entity.User;
+import com.example.microservices.service_user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

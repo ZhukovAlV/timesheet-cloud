@@ -1,7 +1,7 @@
-package com.example.microservices.service_timesheet.service;
+package com.example.microservices.service_timedata.service;
 
-import com.example.microservices.service_timesheet.entity.TimeData;
-import com.example.microservices.service_timesheet.repository.TimeDataRepository;
+import com.example.microservices.service_timedata.entity.TimeData;
+import com.example.microservices.service_timedata.repository.TimeDataRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

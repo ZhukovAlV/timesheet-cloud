@@ -1,7 +1,7 @@
-package com.example.microservices.service_timesheet.service;
+package com.example.microservices.service_user.service;
 
-import com.example.microservices.service_timesheet.entity.User;
-import com.example.microservices.service_timesheet.repository.UserRepository;
+import com.example.microservices.service_user.entity.User;
+import com.example.microservices.service_user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
