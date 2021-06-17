@@ -12,7 +12,7 @@ public interface UserService {
 
     User findByLogin(String login);
 
-    List<User> findAll();
+    Iterable<User> findAll();
 
     Optional<User> findById(Long id);
 }
