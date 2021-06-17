@@ -23,8 +23,8 @@ public class TimeDataController {
         return timeDataService.findAll();
     }
 
-    @GetMapping("/get/{id}")
-    public TimeData getTimeData(@PathVariable Long id) {
+    @GetMapping("/{id}")
+    public TimeData findById(@PathVariable Long id) {
         TimeData timeData = timeDataService.findById(id);
         if (timeData == null) {
             throw new RuntimeException("TimeData ID not found - " + id);
@@ -38,9 +38,8 @@ public class TimeDataController {
         return timeData;
     }
 
-    @PutMapping("/update/{id}")
-    public TimeData updateTimeData(@PathVariable Long id, @RequestBody TimeData timeData) {
-        timeData.setId(id);
+    @PutMapping("/update")
+    public TimeData updateTimeData(@RequestBody TimeData timeData) {
         timeDataService.save(timeData);
         return timeData;
     }

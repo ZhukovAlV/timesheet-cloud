@@ -27,15 +27,15 @@ public class UserController {
     }
 
    // Просмотр всех пользователей
-   @GetMapping("/findAll")
-   public List<User> findAllUser() {
+   @GetMapping("/all")
+   public List<User> findAll() {
        log.info("Find all users request");
        return userService.findAll();
    }
     // Сохраняем изменения пользователю
-    @PutMapping("/save")
-    public User saveUser(@ModelAttribute("user")User user) {
-        log.info("Save user");
+    @PutMapping("/update")
+    public User updateUser(@ModelAttribute("user")User user) {
+        log.info("Update user");
         return userService.save(user);
     }
 
