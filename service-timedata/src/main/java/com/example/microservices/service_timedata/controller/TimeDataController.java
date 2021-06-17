@@ -50,6 +50,6 @@ public class TimeDataController {
     public ResponseEntity deleteTimeData(@PathVariable Long timeDataId) {
         log.info("Delete timedata by " + timeDataId);
         timeDataService.deleteById(timeDataId);
-        return  ResponseEntity.ok().build();
+        return ResponseEntity.ok().build();
     }
 }
