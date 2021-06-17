@@ -29,7 +29,7 @@ public class UserController {
 
    // Просмотр всех пользователей
    @GetMapping("")
-   public List<User> findAll() {
+   public Iterable<User> findAll() {
        log.info("Find all users request");
        return userService.findAll();
    }
