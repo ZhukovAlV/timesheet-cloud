@@ -28,28 +28,28 @@ public class UserController {
     }
 
    // Просмотр всех пользователей
-   @GetMapping("/all")
+   @GetMapping("")
    public List<User> findAll() {
        log.info("Find all users request");
        return userService.findAll();
    }
 
     // Сохраняем изменения пользователю
-    @PutMapping("/update")
+    @PutMapping("")
     public User updateUser(@RequestBody User user) {
         log.info("Update user by " + user.getUserId());
         return userService.save(user);
     }
 
     // Добавляем нового пользователя
-    @PostMapping("/add")
+    @PostMapping("")
     public User addUser(@RequestBody User user) {
         log.info("Add user");
         return userService.save(user);
     }
 
     // Удаляем пользователя
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity deleteUser(@PathVariable Long id) {
         log.info("Delete user by ID");
         userService.deleteById(id);

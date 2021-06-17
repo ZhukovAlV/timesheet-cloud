@@ -19,7 +19,7 @@ public class TimeDataController {
 
     TimeDataService timeDataService;
 
-    @GetMapping("/all")
+    @GetMapping("")
     public Iterable<TimeData> findAll() {
         log.info("Get all timedata");
         return timeDataService.findAll();
@@ -31,21 +31,21 @@ public class TimeDataController {
         return timeDataService.findByUserId(userId);
     }
 
-    @PostMapping("/add")
+    @PostMapping("")
     public TimeData addTimeData(@RequestBody TimeData timeData) {
         log.info("Add new timedata");
         timeDataService.save(timeData);
         return timeData;
     }
 
-    @PutMapping("/update")
+    @PutMapping("")
     public TimeData updateTimeData(@RequestBody TimeData timeData) {
         log.info("Update timedata by " + timeData.getId());
         timeDataService.save(timeData);
         return timeData;
     }
 
-    @DeleteMapping("/delete/{timeDataId}")
+    @DeleteMapping("/{timeDataId}")
     public ResponseEntity deleteTimeData(@PathVariable Long timeDataId) {
         log.info("Delete timedata by " + timeDataId);
         timeDataService.deleteById(timeDataId);
