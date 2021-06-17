@@ -11,7 +11,6 @@
     <modules>
         <module>cloud-eureka</module>
         <module>cloud-zuul</module>
-        <module>service-timesheet</module>
         <module>service-user</module>
         <module>service-timedata</module>
     </modules>
