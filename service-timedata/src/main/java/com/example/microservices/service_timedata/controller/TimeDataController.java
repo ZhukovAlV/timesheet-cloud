@@ -31,7 +31,6 @@ public class TimeDataController {
         return timeDataService.findByUserId(userId);
     }
 
-
     @PostMapping("/add")
     public TimeData addTimeData(@RequestBody TimeData timeData) {
         log.info("Add new timedata");
