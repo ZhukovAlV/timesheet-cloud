@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/timedata")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @AllArgsConstructor
 @Log4j2
 public class TimeDataController {
