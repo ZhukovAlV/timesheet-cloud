@@ -4,6 +4,7 @@ import com.example.microservices.service_timedata.entity.TimeData;
 import com.example.microservices.service_timedata.service.TimeDataService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,38 +20,36 @@ public class TimeDataController {
     TimeDataService timeDataService;
 
     @GetMapping("/all")
-    public List<TimeData> findAll() {
+    public Iterable<TimeData> findAll() {
+        log.info("Get all timedata");
         return timeDataService.findAll();
     }
 
-    @GetMapping("/{id}")
-    public TimeData findById(@PathVariable Long id) {
-        TimeData timeData = timeDataService.findById(id);
-        if (timeData == null) {
-            throw new RuntimeException("TimeData ID not found - " + id);
-        }
-        return timeData;
+    @GetMapping("/{userId}")
+    public Iterable<TimeData> findByUserId(@PathVariable Long userId) {
+        log.info("Get timedata by " + userId);
+        return timeDataService.findByUserId(userId);
     }
+
 
     @PostMapping("/add")
     public TimeData addTimeData(@RequestBody TimeData timeData) {
+        log.info("Add new timedata");
         timeDataService.save(timeData);
         return timeData;
     }
 
     @PutMapping("/update")
     public TimeData updateTimeData(@RequestBody TimeData timeData) {
+        log.info("Update timedata by " + timeData.getId());
         timeDataService.save(timeData);
         return timeData;
     }
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteTimeData(@PathVariable Long id) {
-        TimeData tempTimeData = timeDataService.findById(id);
-        if (tempTimeData == null) {
-            throw new RuntimeException("TimeData ID not found - " + id);
-        }
-        timeDataService.deleteById(id);
-        return  "Deleted TimeData ID - " + id;
+    @DeleteMapping("/delete/{timeDataId}")
+    public ResponseEntity deleteTimeData(@PathVariable Long timeDataId) {
+        log.info("Delete timedata by " + timeDataId);
+        timeDataService.deleteById(timeDataId);
+        return  ResponseEntity.ok().build();
     }
 }
