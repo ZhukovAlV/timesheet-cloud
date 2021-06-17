@@ -49,10 +49,10 @@ public class UserController {
     }
 
     // Удаляем пользователя
-    @DeleteMapping("/{id}")
-    public ResponseEntity deleteUser(@PathVariable Long id) {
+    @DeleteMapping("/{userId}")
+    public ResponseEntity deleteUser(@PathVariable Long userId) {
         log.info("Delete user by ID");
-        userService.deleteById(id);
+        userService.deleteById(userId);
         return ResponseEntity.ok().build();
     }
 }
