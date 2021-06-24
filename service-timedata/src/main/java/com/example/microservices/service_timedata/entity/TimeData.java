@@ -20,7 +20,7 @@ public class TimeData {
     private Long userId;
     @Column(name = "HOUR")
     private Integer hour;
-    @Column(name = "TYPE_D")
+    @Column(name = "TYPE_")
     private String type;
     @Column(name = "DATE")
     @DateTimeFormat(pattern = "yyyy-MM-dd")

@@ -14,11 +14,29 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long userId;
-    @Column(name = "LOGIN")
+
+    @Column(name="PERSONALNUMBER")
+    private Long personalNumber;
+
+    @Column(name="FIRSTNAME")
+    private String firstName;
+
+    @Column(name="LASTNAME")
+    private String lastName;
+
+    @Column(name="MIDLENAME")
+    private String middleName;
+
+    @Column(name="LOGIN")
     private String login;
-    @Column(name = "NAME")
-    private String name;
-    @Column(name = "SURNAME")
-    private String surname;
+
+    @Column(name="POSITION_E")
+    private String positionEng;
+
+    @Column(name="POSITION_R")
+    private String positionRus;
+
+    @Column(name="ACCESSLEVEL")
+    private String accessLevel;
 }
 
