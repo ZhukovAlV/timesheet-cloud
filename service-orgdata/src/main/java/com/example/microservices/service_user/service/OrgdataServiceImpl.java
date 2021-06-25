@@ -27,8 +27,8 @@ public class OrgdataServiceImpl implements OrgdataService {
 
     @Override
     @Transactional
-    public void save(Orgdata theOrgdata) {
-        orgdataRepository.save(theOrgdata);
+    public Orgdata save(Orgdata theOrgdata) {
+        return orgdataRepository.save(theOrgdata);
     }
 
     @Override

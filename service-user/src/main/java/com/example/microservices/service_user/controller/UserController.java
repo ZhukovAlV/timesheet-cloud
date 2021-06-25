@@ -4,12 +4,10 @@ import com.example.microservices.service_user.entity.User;
 import com.example.microservices.service_user.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -50,9 +48,13 @@ public class UserController {
 
     // Удаляем пользователя
     @DeleteMapping("/{userId}")
-    public ResponseEntity deleteUser(@PathVariable Long userId) {
+    public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
         log.info("Delete user by ID");
-        userService.deleteById(userId);
-        return ResponseEntity.ok().build();
+        if (userService.findById(userId).isPresent()) {
+            userService.deleteById(userId);
+            return ResponseEntity.ok().build();
+        } else {
+            return new ResponseEntity<>("", HttpStatus.NOT_FOUND);
+        }
     }
 }

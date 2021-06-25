@@ -4,11 +4,10 @@ import com.example.microservices.service_timedata.entity.TimeData;
 import com.example.microservices.service_timedata.service.TimeDataService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/timedata")
@@ -46,9 +45,13 @@ public class TimeDataController {
     }
 
     @DeleteMapping("/{timeDataId}")
-    public ResponseEntity deleteTimeData(@PathVariable Long timeDataId) {
+    public ResponseEntity<?> deleteTimeData(@PathVariable Long timeDataId) {
         log.info("Delete timedata by " + timeDataId);
-        timeDataService.deleteById(timeDataId);
-        return ResponseEntity.ok().build();
+        if (timeDataService.findById(timeDataId).isPresent()) {
+            timeDataService.deleteById(timeDataId);
+            return ResponseEntity.ok().build();
+        } else {
+            return new ResponseEntity<>("", HttpStatus.NOT_FOUND);
+        }
     }
 }

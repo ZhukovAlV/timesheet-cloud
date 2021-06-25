@@ -9,7 +9,7 @@ public interface OrgdataService {
 
     Optional<Orgdata> findById(Long id);
 
-    void save(Orgdata orgdata);
+    Orgdata save(Orgdata orgdata);
 
     void deleteById(Long id);
 }
