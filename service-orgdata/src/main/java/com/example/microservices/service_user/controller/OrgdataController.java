@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/orgdata")
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @AllArgsConstructor
 @Log4j2
@@ -43,7 +43,7 @@ public class OrgdataController {
     }
 
     @DeleteMapping("/{orgId}")
-    public ResponseEntity deleteOrgdata(@PathVariable Long orgId) {
+    public ResponseEntity<Orgdata> deleteOrgdata(@PathVariable Long orgId) {
         log.info("Delete orgdata by ID");
         orgdataRepository.deleteById(orgId);
         return ResponseEntity.ok().build();
