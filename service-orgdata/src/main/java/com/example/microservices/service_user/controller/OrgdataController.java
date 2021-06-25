@@ -43,7 +43,7 @@ public class OrgdataController {
     }
 
     @DeleteMapping("/{orgId}")
-    public ResponseEntity deleteOrgdata(@PathVariable Long orgId) {
+    public ResponseEntity<?> deleteOrgdata(@PathVariable Long orgId) {
         log.info("Delete orgdata by ID");
         orgdataRepository.deleteById(orgId);
         return ResponseEntity.ok().build();
