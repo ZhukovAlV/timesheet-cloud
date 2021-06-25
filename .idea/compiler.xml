@@ -11,6 +11,7 @@
         <module name="cloud-zuul" />
         <module name="service-timedata" />
         <module name="service-user" />
+        <module name="service-orgdata" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +24,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cloud-eureka" options="-parameters" />
       <module name="cloud-zuul" options="-parameters" />
+      <module name="service-orgdata" options="-parameters" />
       <module name="service-timedata" options="-parameters" />
       <module name="service-timesheet" options="-parameters" />
       <module name="service-user" options="-parameters" />
