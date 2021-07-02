@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 
 @RestController
 @RequestMapping("/timedata")
@@ -22,6 +24,12 @@ public class TimeDataController {
     public Iterable<TimeData> findAll() {
         log.info("Get all timedata");
         return timeDataService.findAll();
+    }
+
+    @GetMapping("/{year}/{month}")
+    public Map<Integer,TimeData> findByYearAndMonth(@PathVariable Integer year, @PathVariable Integer month) {
+        log.info("Get timedata by year and month");
+        return timeDataService.findByYearAndMonth(year,month);
     }
 
     @GetMapping("/{userId}")

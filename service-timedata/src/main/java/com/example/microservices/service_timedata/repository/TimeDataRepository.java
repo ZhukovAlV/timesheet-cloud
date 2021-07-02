@@ -10,4 +10,5 @@ import java.time.LocalDate;
 public interface TimeDataRepository extends CrudRepository<TimeData, Long> {
     TimeData findByUserIdAndDate(Long userId, LocalDate date);
     Iterable<TimeData> findByUserId(Long userId);
+    Iterable<TimeData> findByDate(LocalDate localDate);
 }
