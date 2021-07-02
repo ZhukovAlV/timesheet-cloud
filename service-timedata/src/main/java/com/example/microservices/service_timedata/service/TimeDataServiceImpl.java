@@ -21,22 +21,22 @@ public class TimeDataServiceImpl implements TimeDataService {
 
     @Override
     public Map<Integer,TimeData> findByYearAndMonth(Integer year, Integer month) {
-        Map<Integer,TimeData> timeDataList = new HashMap();
+        Map<Integer,TimeData> timeDataMap = new HashMap();
 
         // сперва выбираем уже имеющиеся трудодни в базе
         timeDataRepository.findAll().forEach(timeData -> {
             if (timeData.getDate().getYear()==year &&
                     timeData.getDate().getMonthValue()==month)
-            timeDataList.put(timeData.getDate().getDayOfMonth(),timeData);
+                timeDataMap.put(timeData.getDate().getDayOfMonth(),timeData);
         });
 
         //затем заполняем new TimeData для тех трудодней, которых нет в базе
         Calendar monthStart = new GregorianCalendar(year, month, 1);
         for (int i = 1; i <= monthStart.getActualMaximum(Calendar.DAY_OF_MONTH); i++) {
-            if (!timeDataList.containsKey(i)) timeDataList.put(i,new TimeData());
+            if (!timeDataMap.containsKey(i)) timeDataMap.put(i,new TimeData());
         }
 
-        return timeDataList;
+        return timeDataMap;
     }
 
     @Override
