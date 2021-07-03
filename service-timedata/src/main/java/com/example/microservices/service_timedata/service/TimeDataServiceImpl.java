@@ -4,6 +4,7 @@ import com.example.microservices.service_timedata.entity.TimeData;
 import com.example.microservices.service_timedata.repository.TimeDataRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -20,11 +21,11 @@ public class TimeDataServiceImpl implements TimeDataService {
     }
 
     @Override
-    public Map<Integer,TimeData> findByYearAndMonth(Integer year, Integer month) {
+    public Map<Integer,TimeData> findByUserAndYearAndMonth(Long userId, Integer year, Integer month) {
         Map<Integer,TimeData> timeDataMap = new HashMap();
 
         // сперва выбираем уже имеющиеся трудодни в базе
-        timeDataRepository.findAll().forEach(timeData -> {
+        timeDataRepository.findByUserId(userId).forEach(timeData -> {
             if (timeData.getDate().getYear()==year &&
                     timeData.getDate().getMonthValue()==month)
                 timeDataMap.put(timeData.getDate().getDayOfMonth(),timeData);

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface TimeDataService {
     Iterable<TimeData> findAll();
-    Map<Integer,TimeData> findByYearAndMonth(Integer year, Integer month);
+    Map<Integer,TimeData> findByUserAndYearAndMonth(Long userId, Integer year, Integer month);
     Optional<TimeData> findById(Long theId);
     Iterable<TimeData> findByUserId(Long userId);
     void save(TimeData theTimedata);

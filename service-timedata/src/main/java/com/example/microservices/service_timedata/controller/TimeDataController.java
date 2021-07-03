@@ -26,10 +26,10 @@ public class TimeDataController {
         return timeDataService.findAll();
     }
 
-    @GetMapping("/{year}/{month}")
-    public Map<Integer,TimeData> findByYearAndMonth(@PathVariable Integer year, @PathVariable Integer month) {
+    @GetMapping("/{userId}/{year}/{month}")
+    public Map<Integer,TimeData> findByYearAndMonth(@PathVariable Long userId, @PathVariable Integer year, @PathVariable Integer month) {
         log.info("Get timedata by year and month");
-        return timeDataService.findByYearAndMonth(year,month);
+        return timeDataService.findByUserAndYearAndMonth(userId, year,month);
     }
 
     @GetMapping("/{userId}")
