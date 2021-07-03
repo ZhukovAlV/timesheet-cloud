@@ -34,7 +34,14 @@ public class TimeDataServiceImpl implements TimeDataService {
         //затем заполняем new TimeData для тех трудодней, которых нет в базе
         Calendar monthStart = new GregorianCalendar(year, month, 1);
         for (int i = 1; i <= monthStart.getActualMaximum(Calendar.DAY_OF_MONTH); i++) {
-            if (!timeDataMap.containsKey(i)) timeDataMap.put(i,new TimeData());
+            if (!timeDataMap.containsKey(i)) {
+                TimeData timeData = new TimeData();
+                timeData.setUserId(userId);
+                timeData.setHour(8);
+                timeData.setType("Я");
+                timeData.setDate(LocalDate.of(year, month, i));
+                timeDataMap.put(i,timeData);
+            }
         }
 
         return timeDataMap;

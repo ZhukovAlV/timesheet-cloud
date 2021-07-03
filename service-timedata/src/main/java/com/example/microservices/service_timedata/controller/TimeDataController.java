@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -51,6 +52,15 @@ public class TimeDataController {
         timeDataService.save(timeData);
         return timeData;
     }
+
+/*    @PutMapping("")
+    public List<TimeData> updateListTimeData(@RequestBody List<TimeData> listTimeData) {
+        log.info("Update List<TimeData>");
+        for (TimeData timeData : listTimeData) {
+            timeDataService.save(timeData);
+        }
+        return listTimeData;
+    }*/
 
     @DeleteMapping("/{timeDataId}")
     public ResponseEntity<?> deleteTimeData(@PathVariable Long timeDataId) {
